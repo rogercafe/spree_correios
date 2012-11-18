@@ -8,6 +8,10 @@ module Spree
     preference :receive_in_hands, :boolean, default: false
     
     attr_reader :delivery_time
+
+    attr_accessible :preferred_zipcode, :preferred_token,
+                    :preferred_password, :preferred_declared_value,
+                    :preferred_receipt_notification, :preferred_receive_in_hands
     
     def compute(object)
       return unless object.present? and object.line_items.present?
